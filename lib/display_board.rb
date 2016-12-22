@@ -13,6 +13,7 @@ end
 
 def display_board(board)
 =begin
+    #This will display a square board with any side length.
     calculate board dimensions with square root
     build horiz_bar: (dimen * 3) + dimen - 1
     for each row,
