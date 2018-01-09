@@ -1,0 +1,3 @@
+# ignore these paths for local development
+.bundle/
+bin/
