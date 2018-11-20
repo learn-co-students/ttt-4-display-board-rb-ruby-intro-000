@@ -6,15 +6,12 @@
 #the method will return a board with the correct x's and os
 #create a default board to output
 #use interpolation to take the board parameters and add it to the default board
-def display_board(board = [" "," "," "," ","X"," "," "," "," "])
-  row1 = "   |   |   "
-  row2 = "-----------"
-  row3 = "   |   |   "
-  row4 = "-----------"
-  row5 = "   |   |   "
-  puts row1
-  puts row2
-  puts row3
-  puts row4
-  puts row5
+
+board = [" "," "," "," "," "," "," "," "," "]
+def display_board(board)
+  puts  " #{board[0]} | #{board[1]} | #{board[2]} "
+  puts  "-----------"
+  puts  " #{board[3]} | #{board[4]} | #{board[5]} "
+  puts  "-----------"
+  puts  " #{board[6]} | #{board[7]} | #{board[8]} "
 end
