@@ -111,7 +111,7 @@ The board follows the following format:
 4. Three rows on the board.
 5. Rows are separated by: `-----------`
 
-> Note: If you've built the blank tic tac toe board in a previous lab, you may want to go back and copy it in to this lab. Feel free to also re-create the board from scratch. 
+> Note: If you've built the blank tic tac toe board in a previous lab, you may want to go back and copy it in to this lab. Feel free to also re-create the board from scratch.
 
 ### Building Dynamic Strings with Interpolation
 
@@ -146,6 +146,9 @@ Make sure to be interpolating data from the `board` array within your `display_b
 2. Use the argument within the method.
 3. Read data from an array.
 4. Print out a multi-line dynamic string using Interpolation
+
+**Note:** Keep in mind the key difference between this lab and the last lab is the __kind__ of board you'll be displaying. Previously, you built a static board that is hardcoded to be empty every time. In practice, we'll need a board that actually updates, displaying a live, dynamic represenation of who moved in what spot.
+Feel free to reuse the same board from earlier as a starter skeleton, but you'll be making a very important change to it to allow it display this live data on a turn-by-turn basis.
 
 ## Instructions
 
