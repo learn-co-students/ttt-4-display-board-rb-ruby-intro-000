@@ -8,6 +8,6 @@ def display_board (board)
   puts " #{board[6]} | #{board[7]} | #{board[8]} "
 end
 
-markers1 = ["X", "X", " ", " ", " ", "O", " ", " ", "O"]
+markers = ["X", "X", " ", " ", " ", "O", " ", " ", "O"]
 
-display_board(markers1)
+display_board(markers)
