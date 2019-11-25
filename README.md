@@ -7,7 +7,7 @@ A tic tac toe board can be represented by an array of 9 string elements containi
 An empty board would be:
 
 ```ruby
-board = [" "," "," "," "," "," "," "," "," "]
+board = ["  ","  ","  ","  ","  ","  ","  ","  ","  "]
 ```
 
 If we called `display_board` and passed in that `board` as an argument, we'd expect the following:
