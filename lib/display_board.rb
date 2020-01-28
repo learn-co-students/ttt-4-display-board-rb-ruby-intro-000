@@ -3,9 +3,9 @@
 board = [" "," "," "," "," "," "," "," "," "]
 
 def display_board(board)
-  puts " " + board[0] + " | " + board[1] + " | " + board[2] + " "
+  puts board[0].center(3," ") + "|" + board[1].center(3," ") + "|" + board[2].center(3," ")
   puts "-----------"
-  puts " " + board[3] + " | " + board[4] + " | " + board[5] + " "
+  puts board[3].center(3," ") + "|" + board[4].center(3," ") + "|" + board[5].center(3," ")
   puts "-----------"
-  puts " " + board[6] + " | " + board[7] + " | " + board[8] + " "
+  puts board[6].center(3," ") + "|" + board[7].center(3," ") + "|" + board[8].center(3," ")
 end
