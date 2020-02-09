@@ -1,139 +1,139 @@
-require_relative"../lib/display_board.rb"
+# frozen_string_literal: true
+
+require_relative '../lib/display_board.rb'
 
 describe "#display_board in 'lib/display_board.rb" do
   context 'various game situations' do
     it 'prints a blank board when the board array is empty' do
-      board = [" "," "," "," "," "," "," "," "," "]
+      board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
 
-      output = capture_puts{ display_board(board) }
+      output = capture_puts { display_board(board) }
       rows = output.split("\n")
 
-      expect(rows[0]).to eq("   |   |   ")
-      expect(rows[1]).to eq("-----------")
-      expect(rows[2]).to eq("   |   |   ")
-      expect(rows[3]).to eq("-----------")
-      expect(rows[4]).to eq("   |   |   ")
+      expect(rows[0]).to eq('   |   |   ')
+      expect(rows[1]).to eq('-----------')
+      expect(rows[2]).to eq('   |   |   ')
+      expect(rows[3]).to eq('-----------')
+      expect(rows[4]).to eq('   |   |   ')
     end
 
     it 'prints a board with an X in the center position' do
-      board = [" ", " ", " ", " ", "X", " ", " ", " ", " "]
+      board = [' ', ' ', ' ', ' ', 'X', ' ', ' ', ' ', ' ']
 
-      output = capture_puts{ display_board(board) }
+      output = capture_puts { display_board(board) }
       rows = output.split("\n")
 
-      expect(rows[0]).to eq("   |   |   ")
-      expect(rows[1]).to eq("-----------")
-      expect(rows[2]).to eq("   | X |   ")
-      expect(rows[3]).to eq("-----------")
-      expect(rows[4]).to eq("   |   |   ")
-
+      expect(rows[0]).to eq('   |   |   ')
+      expect(rows[1]).to eq('-----------')
+      expect(rows[2]).to eq('   | X |   ')
+      expect(rows[3]).to eq('-----------')
+      expect(rows[4]).to eq('   |   |   ')
     end
 
     it 'prints a board with O in the top left' do
-      board = ["O", " ", " ", " ", " ", " ", " ", " ", " "]
+      board = ['O', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
       # Leave hint for assigning the 0 index value of O
-      board[0] = "O"
+      board[0] = 'O'
 
-      output = capture_puts{ display_board(board) }
+      output = capture_puts { display_board(board) }
       rows = output.split("\n")
 
-      expect(rows[0]).to eq(" O |   |   ")
-      expect(rows[1]).to eq("-----------")
-      expect(rows[2]).to eq("   |   |   ")
-      expect(rows[3]).to eq("-----------")
-      expect(rows[4]).to eq("   |   |   ")
+      expect(rows[0]).to eq(' O |   |   ')
+      expect(rows[1]).to eq('-----------')
+      expect(rows[2]).to eq('   |   |   ')
+      expect(rows[3]).to eq('-----------')
+      expect(rows[4]).to eq('   |   |   ')
     end
 
     it 'prints a board with an X in the center and an O in the top left' do
-      board = ["O", " ", " ", " ", "X", " ", " ", " ", " "]
-      board[0] = "O"
-      board[4] = "X"
+      board = ['O', ' ', ' ', ' ', 'X', ' ', ' ', ' ', ' ']
+      board[0] = 'O'
+      board[4] = 'X'
 
-      output = capture_puts{ display_board(board) }
+      output = capture_puts { display_board(board) }
       rows = output.split("\n")
 
-      expect(rows[0]).to eq(" O |   |   ")
-      expect(rows[1]).to eq("-----------")
-      expect(rows[2]).to eq("   | X |   ")
-      expect(rows[3]).to eq("-----------")
-      expect(rows[4]).to eq("   |   |   ")
+      expect(rows[0]).to eq(' O |   |   ')
+      expect(rows[1]).to eq('-----------')
+      expect(rows[2]).to eq('   | X |   ')
+      expect(rows[3]).to eq('-----------')
+      expect(rows[4]).to eq('   |   |   ')
     end
 
     it 'prints a board with X winning via the top row' do
-      board = ["X", "X", "X", " ", " ", " ", " ", " ", " "]
+      board = ['X', 'X', 'X', ' ', ' ', ' ', ' ', ' ', ' ']
 
-      output = capture_puts{ display_board(board) }
+      output = capture_puts { display_board(board) }
       rows = output.split("\n")
 
-      expect(rows[0]).to eq(" X | X | X ")
-      expect(rows[1]).to eq("-----------")
-      expect(rows[2]).to eq("   |   |   ")
-      expect(rows[3]).to eq("-----------")
-      expect(rows[4]).to eq("   |   |   ")
+      expect(rows[0]).to eq(' X | X | X ')
+      expect(rows[1]).to eq('-----------')
+      expect(rows[2]).to eq('   |   |   ')
+      expect(rows[3]).to eq('-----------')
+      expect(rows[4]).to eq('   |   |   ')
     end
 
     it 'prints a board with O winning via the bottom row' do
-      board = [" ", " ", " ", " ", " ", " ", "O", "O", "O"]
+      board = [' ', ' ', ' ', ' ', ' ', ' ', 'O', 'O', 'O']
 
-      output = capture_puts{ display_board(board) }
+      output = capture_puts { display_board(board) }
       rows = output.split("\n")
 
-      expect(rows[0]).to eq("   |   |   ")
-      expect(rows[1]).to eq("-----------")
-      expect(rows[2]).to eq("   |   |   ")
-      expect(rows[3]).to eq("-----------")
-      expect(rows[4]).to eq(" O | O | O ")
+      expect(rows[0]).to eq('   |   |   ')
+      expect(rows[1]).to eq('-----------')
+      expect(rows[2]).to eq('   |   |   ')
+      expect(rows[3]).to eq('-----------')
+      expect(rows[4]).to eq(' O | O | O ')
     end
 
     it 'prints a board with X winning in a top left to bottom right diagonal' do
-      board = ["X", " ", " ", " ", "X", " ", " ", " ", "X"]
+      board = ['X', ' ', ' ', ' ', 'X', ' ', ' ', ' ', 'X']
 
-      output = capture_puts{ display_board(board) }
+      output = capture_puts { display_board(board) }
       rows = output.split("\n")
 
-      expect(rows[0]).to eq(" X |   |   ")
-      expect(rows[1]).to eq("-----------")
-      expect(rows[2]).to eq("   | X |   ")
-      expect(rows[3]).to eq("-----------")
-      expect(rows[4]).to eq("   |   | X ")
+      expect(rows[0]).to eq(' X |   |   ')
+      expect(rows[1]).to eq('-----------')
+      expect(rows[2]).to eq('   | X |   ')
+      expect(rows[3]).to eq('-----------')
+      expect(rows[4]).to eq('   |   | X ')
     end
 
     it 'prints a board with O winning in a top right to bottom left diagonal' do
-      board = [" ", " ", "O", " ", "O", " ", "O", " ", " "]
+      board = [' ', ' ', 'O', ' ', 'O', ' ', 'O', ' ', ' ']
 
-      output = capture_puts{ display_board(board) }
+      output = capture_puts { display_board(board) }
       rows = output.split("\n")
 
-      expect(rows[0]).to eq("   |   | O ")
-      expect(rows[1]).to eq("-----------")
-      expect(rows[2]).to eq("   | O |   ")
-      expect(rows[3]).to eq("-----------")
-      expect(rows[4]).to eq(" O |   |   ")
+      expect(rows[0]).to eq('   |   | O ')
+      expect(rows[1]).to eq('-----------')
+      expect(rows[2]).to eq('   | O |   ')
+      expect(rows[3]).to eq('-----------')
+      expect(rows[4]).to eq(' O |   |   ')
     end
 
     it 'prints arbitrary arrangements of the board' do
-      board = ["X", "X", "X", "X", "O", "O", "X", "O", "O"]
+      board = %w[X X X X O O X O O]
 
-      output = capture_puts{ display_board(board) }
+      output = capture_puts { display_board(board) }
       rows = output.split("\n")
 
-      expect(rows[0]).to eq(" X | X | X ")
-      expect(rows[1]).to eq("-----------")
-      expect(rows[2]).to eq(" X | O | O ")
-      expect(rows[3]).to eq("-----------")
-      expect(rows[4]).to eq(" X | O | O ")
+      expect(rows[0]).to eq(' X | X | X ')
+      expect(rows[1]).to eq('-----------')
+      expect(rows[2]).to eq(' X | O | O ')
+      expect(rows[3]).to eq('-----------')
+      expect(rows[4]).to eq(' X | O | O ')
 
+      board = %w[X O X O X X O X O]
 
-      board = ["X", "O", "X", "O", "X", "X", "O", "X", "O"]
-
-      output = capture_puts{ display_board(board) }
+      output = capture_puts { display_board(board) }
       rows = output.split("\n")
 
-      expect(rows[0]).to eq(" X | O | X ")
-      expect(rows[1]).to eq("-----------")
-      expect(rows[2]).to eq(" O | X | X ")
-      expect(rows[3]).to eq("-----------")
-      expect(rows[4]).to eq(" O | X | O ")
+      expect(rows[0]).to eq(' X | O | X ')
+      expect(rows[1]).to eq('-----------')
+      expect(rows[2]).to eq(' O | X | X ')
+      expect(rows[3]).to eq('-----------')
+      expect(rows[4]).to eq(' O | X | O ')
     end
 
     it 'prints an entire board full of Xs' do
@@ -145,10 +145,10 @@ describe "#display_board in 'lib/display_board.rb" do
 
       # Define the board with values that should create the desired output
       # *** Edit the line below ***
-      board = [" ", " ", " ", " ", " ", " ", " ", " ", " "] # This is not correct
+      board = %w[X X X X X X X X X]
 
       # Don't touch the following lines.
-      output = capture_puts{ display_board(board) } if defined?(display_board)
+      output = capture_puts { display_board(board) } if defined?(display_board)
       rows = output.split("\n")
 
       # Each line that starts with expect represents a row in the ouput.
@@ -165,14 +165,14 @@ describe "#display_board in 'lib/display_board.rb" do
 
       # *** Edit the lines below ***
       # *** Uncomment the lines below ***
-      # expect(rows[0]).to eq("   |   |   ")
-      # expect(rows[1]).to eq("-----------")
-      # expect(rows[2]).to eq("   |   |   ")
-      # expect(rows[3]).to eq("-----------")
-      # expect(rows[4]).to eq("   |   |   ")
+      expect(output).to include(' X | X | X ')
+      expect(rows[1]).to eq('-----------')
+      expect(output).to include(' X | X | X ')
+      expect(rows[3]).to eq('-----------')
+      expect(output).to include(' X | X | X ')
 
       # *** Comment the line below by adding a # at the line start ***
-      expect(true).to be(true)
+      # expect(true).to be(true)
     end
 
     it 'prints an entire board full of Os' do
@@ -182,9 +182,16 @@ describe "#display_board in 'lib/display_board.rb" do
       # Hint: You should be able to copy the code in the previous it example
       # and make a few simple edits to convert the previous example to this
       # example's situation.
+      board = %w[O O O O O O O O O]
+      
+      output = capture_puts { display_board(board) } if defined?(display_board)
+      rows = output.split("\n")
 
-      # *** Comment the line below by adding a # at the line start ***
-      expect(true).to be(true)
+      expect(output).to include(' O | O | O ')
+      expect(rows[1]).to eq('-----------')
+      expect(output).to include(' O | O | O ')
+      expect(rows[3]).to eq('-----------')
+      expect(output).to include(' O | O | O ')
     end
   end
 end
