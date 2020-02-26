@@ -1,10 +1,7 @@
 # Define display_board that accepts a board and prints
 # out the current state.
 
-board = ["X","X","O","X","O","X","O","O","O"]
-board[0] = "O"
-board[4] = "X"
-board[2] = "X"
+board = [" "," "," "," "," "," "," "," "," "]
 
 def display_board(board)
   puts " #{board[0]} | #{board[1]} | #{board[2]} "
@@ -13,3 +10,4 @@ def display_board(board)
   puts "-----------"
   puts " #{board[6]} | #{board[7]} | #{board[8]} "
 end
+
