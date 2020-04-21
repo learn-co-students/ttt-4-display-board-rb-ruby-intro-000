@@ -32,8 +32,9 @@ describe "#display_board in 'lib/display_board.rb" do
     it 'prints a board with O in the top left' do
       board = ["O", " ", " ", " ", " ", " ", " ", " ", " "]
       # Leave hint for assigning the 0 index value of O
-      board[0] = "O"
-
+      #board[0] = "O"
+      #board[0] == "O"
+      #board[8]="X"
       output = capture_puts{ display_board(board) }
       rows = output.split("\n")
 
