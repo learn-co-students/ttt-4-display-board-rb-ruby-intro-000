@@ -145,10 +145,10 @@ describe "#display_board in 'lib/display_board.rb" do
 
       # Define the board with values that should create the desired output
       # *** Edit the line below ***
-      board = [" ", " ", " ", " ", " ", " ", " ", " ", " "] # This is not correct
+      board = ["X", "X", "X", "X", "X", "X", "X", "X", "X"] # This is not correct
 
       # Don't touch the following lines.
-      output = capture_puts{ display_board(board) } if defined?(display_board)
+      output = capture_puts{ display_board(board) } if def(display_board)
       rows = output.split("\n")
 
       # Each line that starts with expect represents a row in the ouput.
@@ -165,17 +165,29 @@ describe "#display_board in 'lib/display_board.rb" do
 
       # *** Edit the lines below ***
       # *** Uncomment the lines below ***
-      # expect(rows[0]).to eq("   |   |   ")
-      # expect(rows[1]).to eq("-----------")
-      # expect(rows[2]).to eq("   |   |   ")
-      # expect(rows[3]).to eq("-----------")
-      # expect(rows[4]).to eq("   |   |   ")
+       expect(rows[0]).to eq(" X | X | X ")
+       expect(rows[1]).to eq("-----------")
+       expect(rows[2]).to eq(" X | X | X ")
+       expect(rows[3]).to eq("-----------")
+       expect(rows[4]).to eq(" X | X | X ")
 
       # *** Comment the line below by adding a # at the line start ***
-      expect(true).to be(true)
+      #expect(true).to be(true)
     end
 
     it 'prints an entire board full of Os' do
+      board = ["O", "O", "O", "O", "O", "O", "O", "O", "O"]
+
+      output = capture_puts{ display_board(board) }
+      rows = output.split("\n")
+
+      expect(rows[0]).to eq(" O | O | O ")
+      expect(rows[1]).to eq("-----------")
+      expect(rows[2]).to eq(" O | O | O ")
+      expect(rows[3]).to eq("-----------")
+      expect(rows[4]).to eq(" O | O | O ")
+    end
+
       # Can you copy the syntax of the tests above to write a test for a board
       # entirely filled with Os?
 
@@ -184,7 +196,9 @@ describe "#display_board in 'lib/display_board.rb" do
       # example's situation.
 
       # *** Comment the line below by adding a # at the line start ***
-      expect(true).to be(true)
+
+      #expect(true).to be(true)
+
     end
   end
 end
